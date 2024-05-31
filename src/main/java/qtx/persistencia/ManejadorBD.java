@@ -47,7 +47,7 @@ public class ManejadorBD {
 		Connection conBD = null;
 		try {
 			conBD = ManejadorBD.poolDeConexionesC3po.getConnection();
-			System.out.println("Usando conexión " + conBD.getClass().getSimpleName() + ", " + conBD.hashCode());
+			System.out.println("Usando conexion " + conBD.getClass().getSimpleName() + ", " + conBD.hashCode());
 
 //			conBD = DriverManager.getConnection(CAD_CONEXION_MYSQL5_1, "root", "root");
 		} 
@@ -178,7 +178,7 @@ public class ManejadorBD {
 			Statement stmt = conBD.createStatement();
 			ResultSet resultSet = stmt.executeQuery(SENTENCIA_SQL);
 			
-			if(resultSet.next()){ // El cursor se avanza para posicionarlo en el renglon leído
+			if(resultSet.next()){ // El cursor se avanza para posicionarlo en el renglon leï¿½do
 				Date fechaVenta = resultSet.getDate("fecha_venta");
 				int idPersonaCte = resultSet.getInt("id_persona_cte");
 				int idPersonaVendedor = resultSet.getInt("id_persona_vendedor");
@@ -233,8 +233,8 @@ public class ManejadorBD {
 	}
 
 	public int insertarVentaTransaccional (Venta nuevaVenta){
-		// Inserta una relación maestro-detalle con relaciones hacia otros objetos en la base de datos.
-		// También utiliza el concepto de llave auto-generada
+		// Inserta una relacion maestro-detalle con relaciones hacia otros objetos en la base de datos.
+		// Tambien utiliza el concepto de llave auto-generada
 		int numVenta = 0;
 		final String strInsertVenta = "INSERT INTO venta SET " 
 									+ "fecha_venta =  curdate()," 

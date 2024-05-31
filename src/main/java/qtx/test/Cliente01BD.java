@@ -19,7 +19,7 @@ public class Cliente01BD {
 		try {
 			Statement peticionBD = conBD.createStatement();
 			if(peticionBD.execute(sentenciaSql))
-				System.out.println("Petición exitosa");
+				System.out.println("Peticion exitosa");
 			ResultSet resultSet = peticionBD.getResultSet();
 			System.out.print("Claves recuperadas: ");
 			while(resultSet.next()){
@@ -46,11 +46,11 @@ public class Cliente01BD {
 	public static void testConsultaClavesArt_todas() {
 		System.out.println("=============== "+ "testConsultaClavesArt_todas()" + " ===============");
 		ManejadorBD dao = new ManejadorBD();
-		System.out.println("claves de artículos: " + dao.getClavesArticulo());
+		System.out.println("claves de articulos: " + dao.getClavesArticulo());
 	}
 	public static void testInsercion() {
 		System.out.println("==================== "+ "testInsercion()" + " ====================");
-		Articulo articulo = new Articulo("ACR-01","Tapón de Gasolina Nissan Tsuru 1998",325.5f, 699.90f);
+		Articulo articulo = new Articulo("ACR-01","Tapon de Gasolina Nissan Tsuru 1998",325.5f, 699.90f);
 		ManejadorBD dao = new ManejadorBD();
 		int nIserciones = dao.insertarArticulo(articulo);
 		System.out.println("Se han insertado " + nIserciones + " registros");
@@ -65,7 +65,7 @@ public class Cliente01BD {
 		System.out.println("==================== "+ "testConsultaXID()" + " ====================");
 		ManejadorBD dao = new ManejadorBD();
 		Articulo articulo = dao.getArticuloXID("ACR-01");
-		System.out.println("Artículo recuperado por ID: " + articulo);
+		System.out.println("Articulo recuperado por ID: " + articulo);
 	}
 	private static void testModificacion() {
 		System.out.println("==================== "+ "testModificacion()" + " ====================");
